@@ -1,0 +1,35 @@
+<template name="welcome">
+    {{>header class="white"}}
+    <div class="tag-list">
+        <div class="tag-title ">热门标签: </div>
+        {{#each tags}}
+        <div class="tag-item _animation">{{name}} x {{num}}</div>
+        {{/each }}
+        <div class="clear"></div>
+    </div>
+    <div class="w-list">
+        {{#each courses}}
+        <a class="w-item " href="/course?id={{_id}}">
+            <div class="w-item-c _animation">
+                <div class="w-item-thumb" style="background-image:url({{thumb}})">
+                    <div class="w-item-like"><i class="fa fa-heart-o"></i> </div>
+                </div>
+                <div class="w-item-info ">
+                    <div class="w-item-name">{{name}}</div>
+                    <div class="w-item-category">{{category}}</div>
+                    <div class="w-item-view"><i class="fa fa-eye"></i> {{view}}</div>
+                </div>
+                <div class="w-item-bg _animation">
+                    <i class="fa fa-play-circle-o"></i>
+                    <div class="w-item-link">开始学习</div>
+                </div>
+                <div class="w-item-user _animation">
+                    <div class="w-item-avatar" style="background-image:url({{user.avatar}})"></div>
+                    <div class="w-item-uname">{{user.nick}}</div>
+                </div>
+            </div>
+        </a>
+        {{/each }}
+        <div class="clear"></div>
+    </div>
+</template>
