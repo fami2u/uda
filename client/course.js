@@ -18,10 +18,11 @@ Template.course.onRendered(function() {
         var ct = parseInt(v.currentTime);
         //查询此时间点是否有需求
         var act = Actions.findOne({ stop: ct });
-        console.log(act);
+     
         //处理停止
         if (act && act.end) {
             cc.html("").append($("<div class='qt-name'>课程已结束</div>"));
+            cc.fadeIn();
             v.pause();
         } else if (act && act.question) {
             //处理question
@@ -53,9 +54,10 @@ Template.course.onRendered(function() {
                         cc.html("");
                         v.currentTime = toact.start + 1;
                         v.play();
+                        cc.fadeOut();
                     }).appendTo(cc);
                 }
-
+                cc.fadeIn();
             } else if (q.type == "input") {
 
                 defaultJumpTo = ct;
@@ -84,6 +86,7 @@ Template.course.onRendered(function() {
                                 v.currentTime = toact.start + 1;
                                 v.play();
                                 cc.html("");
+                                cc.fadeOut();
                             } else {
                                 //比较两边的值存在则按要求跳转
                                 var toact = Actions.findOne({ id: ask.aid });
@@ -93,6 +96,7 @@ Template.course.onRendered(function() {
                                 if (toact.go) {
                                     defaultJumpTo = 0;
                                 }
+                                cc.fadeOut();
                             }
                         }
                     }
@@ -113,6 +117,7 @@ Template.course.onRendered(function() {
                             v.currentTime = toact.start + 1;
                             v.play();
                             cc.html("");
+                            cc.fadeOut();
                         } else {
                             //比较两边的值存在则按要求跳转
                             var toact = Actions.findOne({ id: ask.aid });
@@ -122,12 +127,13 @@ Template.course.onRendered(function() {
                             if (toact.go) {
                                 defaultJumpTo = 0;
                             }
+                            cc.fadeOut();
                         }
                     }
 
                 }).appendTo(cc).focus();
             }
-
+            cc.fadeIn();
         } else if (act && (defaultJumpTo > 0)) {
 
 
@@ -138,7 +144,9 @@ Template.course.onRendered(function() {
 
         }
 
-
+        if(v.currentTime == v.duration){
+        	$(".vic").fadeIn();
+        }
     });
 
 

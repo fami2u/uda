@@ -41,5 +41,8 @@ Template.welcome.helpers({
             });
         }
         return res; 
+    },
+    tians:function(){
+    	return Tian.find({},{sort:{point:-1}});
     }
 });

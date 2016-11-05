@@ -39,6 +39,7 @@
 	width: 100%;
 	padding: 10px;
 	position: relative;
+	padding-right: 40px;
 }
 .w-item-name{
 	font-size: 16px;
@@ -162,4 +163,38 @@
 	color: #fff;
 	background: #121212;
 	border: 1px solid #fff;
+}
+.tt{
+	width: 220px;
+	background: #121212;
+	min-height: 100%;
+	border-right: 1px solid #333;
+}
+.tt-item {
+	font-size: 14px;
+	/* border-bottom: 1px solid #efefef; */
+	line-height: 45px;
+	padding: 10px;
+	color: #fff;
+	position: relative;
+}
+.t-avatar{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-position: center;
+	background-size: cover;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.t-point{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-right: 10px;
+	line-height: 65px;
+	height: 100%;
+	display: block;
+	color: #999;
+
 }
