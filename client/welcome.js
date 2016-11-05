@@ -16,33 +16,43 @@ Template.welcome.helpers({
         }
         return res;
     },
-    tags:function(){
-    	var res = [];
+    tags: function() {
+        var res = [];
         for (var i = 0; i < 5; i++) {
             res.push({
                 name: "meteor",
-                num:18,
+                num: 18,
             });
             res.push({
                 name: "php",
-                num:1,
+                num: 1,
             });
             res.push({
                 name: "java",
-                num:18,
+                num: 18,
             });
             res.push({
                 name: "nodejs",
-                num:18,
+                num: 18,
             });
             res.push({
                 name: "产品设计",
-                num:18,
+                num: 18,
             });
         }
-        return res; 
+        return res;
     },
-    tians:function(){
-    	return Tian.find({},{sort:{point:-1}});
+    tians: function() {
+        return Tian.find({}, {
+            sort: {
+                point: -1
+            }
+        });
+    },
+    randomAvatar() {
+        return "/avatar/" + randomNum(0, 48) + ".png";
+    },
+    randomThumb() {
+        return "/courses/" + randomNum(1, 8) + ".jpg";
     }
 });

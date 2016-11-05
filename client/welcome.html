@@ -4,7 +4,7 @@
     	<div class="tt">
     		{{#each tians}}
     		<div class="tt-item _flex">
-    			<div class="t-avatar" style="background-image:url({{avatar}})"></div>
+    			<div class="t-avatar" style="background-image:url({{randomAvatar}})"></div>
     			{{nick}}
     			<i class="t-point">{{point}}</i>
     		</div>
@@ -22,7 +22,7 @@
                 {{#each courses}}
                 <a class="w-item " href="/course?id={{_id}}">
                     <div class="w-item-c _animation">
-                        <div class="w-item-thumb" style="background-image:url({{thumb}})">
+                        <div class="w-item-thumb" style="background-image:url({{randomThumb}})">
                             <div class="w-item-like"><i class="fa fa-heart-o"></i> </div>
                         </div>
                         <div class="w-item-info ">
@@ -35,7 +35,7 @@
                             <div class="w-item-link">开始学习</div>
                         </div>
                         <div class="w-item-user _animation">
-                            <div class="w-item-avatar" style="background-image:url({{user.avatar}})"></div>
+                            <div class="w-item-avatar" style="background-image:url({{randomAvatar}})"></div>
                             <div class="w-item-uname">{{user.nick}}</div>
                         </div>
                     </div>
