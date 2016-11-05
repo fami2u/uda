@@ -16,23 +16,21 @@ Meteor.methods({
             question: {
                 id: 2,
                 name: 'METEORUP 是什么？',
+                type: 'hotspot',
                 select: [{
                     id: 1,
-                    type: 'hotspot',
                     positionx: 184,
                     positiony: 310,
                     width: 260,
                     height: 260,
                 }, {
                     id: 2,
-                    type: 'hotspot',
                     positionx: 518,
                     positiony: 310,
                     width: 260,
                     height: 260,
                 }, {
                     id: 3,
-                    type: 'hotspot',
                     positionx: 860,
                     positiony: 310,
                     width: 260,
@@ -42,94 +40,96 @@ Meteor.methods({
         }, {
             id: 3,
             name: "安装 METEORUP",
-            start: 29.32,
-            stop: 51,
+            start: 31,
+            stop: 53,
             question: {
                 id: 3,
                 name: '请输入安装命令',
+                type: 'input',
                 select: [{
                     id: 4,
-                    type: 'input',
-                    positionx: 120,
-                    positiony: 663,
+                    positionx: 296,
+                    positiony: 598,
                 }]
             }
         }, {
             id: 4,
             name: "部署项目",
-            start: 65.30,
-            stop: 95,
+            start: 70,
+            stop: 99,
             question: {
                 id: 4,
                 name: "请输入部署命令",
                 type: 'input',
                 select: [{
                     id: 5,
-                    type: 'input',
-                    positionx: 120,
-                    positiony: 663,
+                    positionx: 296,
+                    positiony: 598,
                 }]
             }
         }, {
             id: 5,
             name: '课程完成谢谢',
-            start: 113.21,
-            stop: 119,
+            start: 118,
+            stop: 123.28,
             end: true,
         }, {
             id: 13,
             name: "错误，METEORUP 不是做这个的！",
-            start: 21.38,
-            stop: 22,
+            start: 23.16,
+            stop: 27,
         }, {
             id: 6,
             name: "答对了，meteorup就用用来部署项目的",
-            start: 25.16,
-            stop: 29,
+            start: 27.16,
+            stop: 31,
             go: true
         }, {
             id: 7,
             name: "你检查一下，缺少一个 -g 参数",
-            start: 53.39,
-            stop: 58,
+            start: 55.14,
+            stop: 60,
         }, {
             id: 8,
             name: "亲走点心行吗，你竟然没有输入项目名称",
-            start: 58.18,
-            stop: 63,
+            start: 60,
+            stop: 65,
         }, {
             id: 9,
             name: "安装成功",
-            start: 51.16,
-            stop: 53,
+            start: 67.10,
+            stop: 70,
             go: true
         }, {
             id: 10,
             name: "仔细看，项目名字没写",
-            start: 95.46,
-            stop: 100,
+            start: 101.48,
+            stop: 106,
         }, {
             id: 11,
             name: "命令输错了！",
-            start: 100,
-            stop: 104,
+            start: 106,
+            stop: 110,
         }, {
             id: 12,
             name: "搞定，打完收工。",
-            start: 104.30,
-            stop: 113,
+            start: 110.30,
+            stop: 118,
             go: true,
         }, {
             id: 999,
             name: "不对，你在试试",
-            start: 63.22,
-            stop: 65,
+            start: 65.2,
+            stop: 67,
         }];
         for (act of templates) {
             Actions.insert(act);
         }
     },
     importAsks: () => {
+        // ====================================================
+        //     this
+        // ====================================================
         // ====================================================
         //     this
         // ====================================================
@@ -181,7 +181,7 @@ Meteor.methods({
             value: 'meteorup push projectname',
             aid: 12
         }, {
-            aid: '999',
+            aid: 999,
             default: true
         }];
         for (ask of asks) {
