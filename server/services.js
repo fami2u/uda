@@ -16,9 +16,10 @@ Meteor.methods({
             question: {
                 id: 2,
                 name: 'meteorup要做的是什么？',
+                 type: 'hotspot',
                 select: [{
                     id: 1,
-                    type: 'hotspot',
+                   
                     positionx: 300,
                     positiony: 200,
                     width: 100,
@@ -47,9 +48,9 @@ Meteor.methods({
             question: {
                 id: 3,
                 name: '请输入安装的命令',
+                type: 'input',
                 select: [{
                     id: 4,
-                    type: 'input',
                     positionx: 300,
                     positiony: 200,
                 }]
@@ -62,9 +63,10 @@ Meteor.methods({
             question: {
                 id: 4,
                 name: "请输入部署命令",
+                type: 'input',
                 select: [{
                     id: 5,
-                    type: 'input',
+                    
                     positionx: 300,
                     positiony: 200,
                 }]
@@ -73,7 +75,7 @@ Meteor.methods({
             id: 5,
             name: '课程完成谢谢',
             start: 18,
-            stop: 22,
+            stop: 28,
             end: true,
         }, {
             id: 13,
@@ -122,7 +124,7 @@ Meteor.methods({
             id: 999,
             name: "不对，你在试试",
             start: 25,
-            stop: 28,
+            stop: 27,
         }];
         for (act of templates) {
             Actions.insert(act);
@@ -181,7 +183,7 @@ Meteor.methods({
             value: 'npm install meteorup',
             aid: 7
         }, {
-            aid: '999',
+            aid: 999,
             default: true
         }];
         for (ask of asks) {
